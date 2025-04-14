@@ -9,20 +9,18 @@ img {
     width: 100%;
 }
 
-.logo {
-    width: auto;
-    height: auto;
+/* The maximum width of the container is 1200px */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
 }
 
-header, footer {
-    text-align: center;
-}
-
-header {
+header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1em;
+    padding: 1.5rem;
 }
 
 header nav ul {
@@ -38,6 +36,26 @@ header nav a {
     color: #000;
 }
 
+.logo {
+    width: auto;
+    height: auto;
+}
+
+header, footer {
+    text-align: center;
+}
+
+/* header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+} */
+
+
+
+
+
 /* Colours values used in the layout #fff, #222, #000,  and #f8fafc. */
 body {
     font-family: 'poppins', sans-serif;
@@ -48,12 +66,6 @@ body {
     margin: 0;
 }
 
-/* The maximum width of the container is 1200px */
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 1em;
-}
 
 
 /* Mobile-first approach in the styling 
@@ -63,11 +75,19 @@ are introduced). */
 
 
 /* Main Section Sweetheart's Affair */
-.main-section {
+/* .main-section {
     display: grid;
     grid-template-columns: 1fr;
     gap: 2rem;
     padding: 3rem 1rem;
+    align-items: center;
+} */
+
+.main-section .container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: start;
 }
 
 .product-images {
@@ -75,12 +95,16 @@ are introduced). */
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
     
-    grid-template-areas: 
+    /* grid-template-areas: 
     "img1 img1 img1"
-    "img2 img3 img4";
+    "img2 img3 img4"; */
 }
 
 .img1 {
+    grid-column: 1/ span 3;
+}
+
+/* .img1 {
     grid-area: img1;
 }
 
@@ -95,7 +119,7 @@ are introduced). */
 .img4 {
     grid-area: img4;
 }
-
+ */
 
 .btn {
     display: flex;
@@ -169,7 +193,6 @@ section h2 {
 
 .try-with-graybox {
     background-color: #f8fafc ;
-    
 }
 
 .try-with-product img {
@@ -210,10 +233,12 @@ h3 {
 and above and adjust page to match the screenshot labeled 
 'product-page-768' */
 @media (min-width: 768px) {
-    .main-section {
+
+    .main-section .container {
         display: grid;
-        grid-template-columns: 1fr  1fr;
-        gap: 2rem; 
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        align-items: start;
     }
 
     .product-images {
@@ -222,12 +247,15 @@ and above and adjust page to match the screenshot labeled
         gap: 1rem;
     }
 
+    .img1 {
+        grid-column: auto;
+    }
 
     .behind-dough-columns {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 2rem;
-        padding: 2rem;
+        padding: 2rem 1rem;
     }
 
     .people-saying-columns {
@@ -235,6 +263,7 @@ and above and adjust page to match the screenshot labeled
         grid-template-columns: repeat(3, 1fr);
         justify-content: space-between;
         gap: 2rem;
+        padding: 3rem 1rem;
     }
 
     .try-with-product {
@@ -247,23 +276,27 @@ and above and adjust page to match the screenshot labeled
 and above and adjust page to match the screenshot labeled 
 'product-page-960' */
 @media (min-width: 960px) {
-    .main-section {
+
+    .main-section .container {
         display: grid;
-        grid-template-columns: 1fr  1fr;
+        grid-template-columns: 1fr 1fr;
         gap: 2rem;
         align-items: start;
     }
+
     .product-images {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 1rem;
     }
-
-    .behind-dough-columns {
+    .img1 {
+        grid-column: auto;
+    }
+        .behind-dough-columns {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 2rem;
-        padding: 2rem;
+        padding: 2rem 1rem;
     }
 
     .people-saying-columns {
@@ -271,6 +304,7 @@ and above and adjust page to match the screenshot labeled
         grid-template-columns: repeat(3, 1fr);
         justify-content: space-between;
         gap: 2rem;
+        padding: 3rem 1rem;
     }
 
     .try-with-product {

@@ -1,0 +1,287 @@
+/* Use the 'Poppins' Google font for the webpage */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+img {
+    width: 100%;
+}
+
+.logo {
+    width: auto;
+    height: auto;
+}
+
+header, footer {
+    text-align: center;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+}
+
+header nav ul {
+    display: flex;
+    gap: 1em;
+    list-style: none;
+    padding-left: 0;
+    
+}
+
+header nav a {
+    text-decoration: none;
+    color: #000;
+}
+
+/* Colours values used in the layout #fff, #222, #000,  and #f8fafc. */
+body {
+    font-family: 'poppins', sans-serif;
+    font-weight: 400;
+    background-color: #fff;
+    color: #000;
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* The maximum width of the container is 1200px */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1em;
+}
+
+
+/* Mobile-first approach in the styling 
+(default styling is suitable for mobile and properties 
+are adjusted for tablet and desktop when media queries 
+are introduced). */
+
+
+/* Main Section Sweetheart's Affair */
+.main-section {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 3rem 1rem;
+}
+
+.product-images {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    
+    grid-template-areas: 
+    "img1 img1 img1"
+    "img2 img3 img4";
+}
+
+.img1 {
+    grid-area: img1;
+}
+
+.img2 {
+    grid-area: img2;
+}
+
+.img3 {
+    grid-area: img3;
+}
+
+.img4 {
+    grid-area: img4;
+}
+
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #000;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    list-style: none;
+    width: fit-content;
+    text-decoration: none;
+}
+
+
+/* Section (Behind the Dough) */
+.behind-dough-section {
+    background-color: #f8fafc;
+    padding: 3rem 1rem;
+    text-align: center;
+}
+
+.behind-dough-title {
+    text-align: center;
+    font-weight: 700;
+    /* margin: 1rem 0; */
+}
+
+.behind-dough-columns {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    text-align: left;
+}
+
+
+/* Section (What people are saying) */
+.people-saying-section {
+    background-color: #000;
+    color: #fff;
+    padding: 3rem 1rem;
+}
+
+.pepole-saying-title {
+    text-align: center;
+    font-weight: 700;   
+    margin: 0.5rem 0;
+}
+
+.people-saying-columns {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: left;
+}
+
+
+/* Section (Try it with...) */
+section h2 {
+    text-align: center;
+}
+
+.try-with-product {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    text-align: center;
+    margin: auto;
+    padding: 3rem 1rem;
+}
+
+.try-with-graybox {
+    background-color: #f8fafc ;
+    
+}
+
+.try-with-product img {
+    width: 100%;
+}
+
+
+
+
+
+
+/* Font sizes for heading levels:
+h1 = 2.027rem
+h2 = 1.802rem
+h3 = 1.266rem */
+
+h1 {
+    font-size: 2.027rem;
+}
+
+h2 {
+    font-size: 1.802rem;
+}
+
+h3 {
+    font-size: 1.266rem;
+}
+
+
+
+
+
+
+
+
+
+/* Add a min-width media query for the screen size of 768px 
+and above and adjust page to match the screenshot labeled 
+'product-page-768' */
+@media (min-width: 768px) {
+    .main-section {
+        display: grid;
+        grid-template-columns: 1fr  1fr;
+        gap: 2rem; 
+    }
+
+    .product-images {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+
+    .behind-dough-columns {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        padding: 2rem;
+    }
+
+    .people-saying-columns {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        justify-content: space-between;
+        gap: 2rem;
+    }
+
+    .try-with-product {
+        grid-template-columns: repeat(4, 1fr);
+    } 
+}
+
+
+/* Add a min-width media query for the screen size of 960px 
+and above and adjust page to match the screenshot labeled 
+'product-page-960' */
+@media (min-width: 960px) {
+    .main-section {
+        display: grid;
+        grid-template-columns: 1fr  1fr;
+        gap: 2rem;
+        align-items: start;
+    }
+    .product-images {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .behind-dough-columns {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        padding: 2rem;
+    }
+
+    .people-saying-columns {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        justify-content: space-between;
+        gap: 2rem;
+    }
+
+    .try-with-product {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+    } 
+}
+
+footer {
+    text-align: center;
+    background-color: #000;
+    color: #fff;
+    padding: 0.5rem;
+}
